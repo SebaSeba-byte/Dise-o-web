@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
+import { formatPrice } from "@/utils/formatPrice";
 
 interface Props {
   id: number;
@@ -49,7 +50,7 @@ export default function CartItem({
         </h3>
 
         <p className="mt-1 font-bold text-[#B08A45]">
-          S/ {price}
+          {formatPrice(price)}
         </p>
 
         <div className="mt-4 flex items-center gap-2">

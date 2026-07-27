@@ -2,6 +2,7 @@
 
 import { useCartStore } from "@/store/cartStore";
 import { generateWhatsapp } from "@/utils/generateWhatsapp";
+import { formatPrice } from "@/utils/formatPrice";
 
 export default function CartSummary() {
 
@@ -25,7 +26,7 @@ export default function CartSummary() {
         </span>
 
         <strong className="text-xl font-bold text-[#111111]">
-          S/ {subtotal.toFixed(2)}
+          {formatPrice(subtotal)}
         </strong>
 
       </div>
