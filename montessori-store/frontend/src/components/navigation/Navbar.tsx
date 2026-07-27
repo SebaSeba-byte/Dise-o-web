@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import { useUIStore } from "@/store/uiStore";
+import { COMPANY } from "@/constants/company";
 
 export default function Navbar() {
 
@@ -22,7 +23,7 @@ export default function Navbar() {
   );
 
   const whatsapp =
-    "https://wa.me/51983064817?text=Hola%20GABLIAM%20STUDIO,%20quisiera%20solicitar%20una%20cotización.";
+    `https://wa.me/${COMPANY.whatsapp}?text=Hola%20${encodeURIComponent(COMPANY.name)},%20quisiera%20solicitar%20una%20cotización.`;
 
   return (
 
@@ -41,7 +42,7 @@ export default function Navbar() {
 
             <Image
               src="/logos/logo.png"
-              alt="GABLIAM STUDIO SAC"
+              alt={COMPANY.name}
               fill
               sizes="(max-width: 768px) 100vw, 224px"
               priority
@@ -52,7 +53,7 @@ export default function Navbar() {
 
         </Link>
 
-        {/* MENÚ */}
+        {/* MENÚ DE NAVEGACIÓN PRINCIPAL */}
 
         <div className="hidden items-center gap-10 text-[16px] font-medium lg:flex">
 
@@ -60,19 +61,19 @@ export default function Navbar() {
             Inicio
           </Link>
 
-          <Link href="/products" className="hover:text-[#B08A45] transition">
+          <Link href="/productos" className="hover:text-[#B08A45] transition">
             Productos
           </Link>
 
-          <Link href="/projects" className="hover:text-[#B08A45] transition">
+          <Link href="/proyectos" className="hover:text-[#B08A45] transition">
             Proyectos
           </Link>
 
-          <Link href="/about" className="hover:text-[#B08A45] transition">
+          <Link href="/nosotros" className="hover:text-[#B08A45] transition">
             Nosotros
           </Link>
 
-          <Link href="/contact" className="hover:text-[#B08A45] transition">
+          <Link href="/contacto" className="hover:text-[#B08A45] transition">
             Contacto
           </Link>
 
@@ -82,20 +83,20 @@ export default function Navbar() {
 
         <div className="flex items-center gap-6">
 
-          <button>
+          <Link href="/productos" title="Buscar Productos">
 
             <Search
               size={22}
-              className="hover:text-[#B08A45] transition"
+              className="hover:text-[#B08A45] transition cursor-pointer"
             />
 
-          </button>
+          </Link>
 
           <a
             href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            title="Solicitar Cotización"
+            title="Solicitar Cotización por WhatsApp"
           >
 
             <MessageCircle
@@ -105,7 +106,7 @@ export default function Navbar() {
 
           </a>
 
-          <button onClick={openCart} className="relative">
+          <button onClick={openCart} className="relative" title="Ver Mi Carrito">
 
             <ShoppingCart
               size={24}
@@ -120,7 +121,7 @@ export default function Navbar() {
 
           </button>
 
-          <button className="lg:hidden">
+          <button className="lg:hidden" title="Menú Móvil">
 
             <Menu size={30}/>
 
