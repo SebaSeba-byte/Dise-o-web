@@ -1,0 +1,9 @@
+{
+  "name": "diseno-web-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix montessori-store/frontend run dev",
+    "build": "npm --prefix montessori-store/frontend run build"
+  }
+}
