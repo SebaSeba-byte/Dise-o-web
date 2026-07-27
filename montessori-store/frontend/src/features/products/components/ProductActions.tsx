@@ -22,7 +22,7 @@ export default function ProductActions({
   );
 
   const whatsapp =
-    `https://wa.me/51983064817?text=Hola,%20quisiera%20cotizar:%20${encodeURIComponent(name)}`;
+    `https://wa.me/51981506693?text=Hola,%20quisiera%20cotizar:%20${encodeURIComponent(name)}`;
 
   return (
 

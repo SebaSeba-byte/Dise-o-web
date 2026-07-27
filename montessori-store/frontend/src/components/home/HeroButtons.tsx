@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 export default function HeroButtons() {
 
   const whatsapp =
-    "https://wa.me/51983064817?text=Hola%20GABLIAM%20STUDIO,%20quisiera%20solicitar%20una%20cotización.";
+    "https://wa.me/51981506693?text=Hola%20GABLIAM%20STUDIO,%20quisiera%20solicitar%20una%20cotización.";
 
   return (
 
