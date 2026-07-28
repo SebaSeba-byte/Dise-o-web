@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Product } from "../../types/product";
 import { formatPrice } from "@/utils/formatPrice";
 import { useCartStore } from "@/store/cartStore";
@@ -14,6 +15,7 @@ export default function ProductInfo({
   product,
 }: Props) {
 
+  const [quantity, setQuantity] = useState(1);
   const addProduct = useCartStore((state) => state.addProduct);
 
   return (
@@ -47,11 +49,29 @@ export default function ProductInfo({
         {formatPrice(product.price)}
       </p>
 
-      <Specifications
-        material="Madera de pino seleccionada"
-        color="Acabado natural mate"
-        edad="1 a 6 años"
-      />
+      <Specifications product={product} />
+
+      <div className="mt-6 flex items-center gap-3">
+
+        <button
+          onClick={() => setQuantity(Math.max(1, quantity - 1))}
+          className="rounded-lg border px-4 py-2 hover:bg-stone-100 transition"
+        >
+          -
+        </button>
+
+        <span className="text-lg font-semibold min-w-[2rem] text-center">
+          {quantity}
+        </span>
+
+        <button
+          onClick={() => setQuantity(quantity + 1)}
+          className="rounded-lg border px-4 py-2 hover:bg-stone-100 transition"
+        >
+          +
+        </button>
+
+      </div>
 
       <button
         onClick={() =>
@@ -60,7 +80,7 @@ export default function ProductInfo({
             name: product.name,
             price: product.price,
             image: product.image,
-            quantity: 1,
+            quantity,
           })
         }
         className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl bg-[#B08A45] py-4 font-semibold text-white shadow-lg transition hover:bg-[#987239]"
@@ -74,3 +94,4 @@ export default function ProductInfo({
   );
 
 }
+

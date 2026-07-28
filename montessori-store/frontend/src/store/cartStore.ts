@@ -39,7 +39,7 @@ export const useCartStore = create<CartStore>((set) => ({
             item.id === product.id
               ? {
                   ...item,
-                  quantity: item.quantity + 1,
+                  quantity: item.quantity + product.quantity,
                 }
               : item
           ),

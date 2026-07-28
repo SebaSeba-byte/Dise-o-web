@@ -10,4 +10,11 @@ export interface Product {
   featured: boolean;
   stock: number;
   rating: number;
+
+  material: string;
+  color: string;
+  dimensions: string;
+  recommendedAge: string;
+  warranty: string;
 }
+

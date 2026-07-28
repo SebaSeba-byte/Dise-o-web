@@ -16,6 +16,12 @@ export const products: Product[] = [
     featured: true,
     stock: 12,
     rating: 5,
+
+    material: "Madera de pino",
+    color: "Natural",
+    dimensions: "190 x 90 x 45 cm",
+    recommendedAge: "2 a 8 años",
+    warranty: "12 meses",
   },
   {
     id: 2,
@@ -29,6 +35,12 @@ export const products: Product[] = [
     featured: false,
     stock: 8,
     rating: 5,
+
+    material: "Madera de pino y MDF premium",
+    color: "Blanco y Madera",
+    dimensions: "80 x 40 x 100 cm",
+    recommendedAge: "1 a 7 años",
+    warranty: "12 meses",
   },
   {
     id: 3,
@@ -42,5 +54,12 @@ export const products: Product[] = [
     featured: true,
     stock: 6,
     rating: 4,
+
+    material: "Madera de pino con acabado atóxico",
+    color: "Natural / Barniz al agua",
+    dimensions: "45 x 40 x 90 cm",
+    recommendedAge: "1.5 a 5 años",
+    warranty: "12 meses",
   },
 ];
+
